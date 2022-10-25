@@ -25,7 +25,7 @@ public class TaskService {
 	@Autowired
 	private ITaskType taskTypeRepo;
 	
-	private List<TaskType> tasksTypes = taskTypeRepo.findAll();
+	private List<TaskType> tasksTypes;
 	
 	public void createTask(Task task) {
 		taskRepo.save(task);
@@ -47,7 +47,7 @@ public class TaskService {
 	public void moveRight(Task task) {
 		TaskStatus taskStatus = task.getTaskStatus();
 		String currentStateLabel = task.getTaskStatus().getLabel();
-		
+		tasksTypes = taskTypeRepo.findAll();
 		tasksTypes.forEach( taskType -> {
 			if (taskType.getLabel() == currentStateLabel) {
 				TaskType nextType = taskTypeRepo.findById(taskType.getId()+1).get();
@@ -61,7 +61,7 @@ public class TaskService {
 	public void moveLeft(Task task) {
 		TaskStatus taskStatus = task.getTaskStatus();
 		String currentStateLabel = task.getTaskStatus().getLabel();
-		
+		tasksTypes = taskTypeRepo.findAll();
 		tasksTypes.forEach( taskType -> {
 			if (taskType.getLabel() == currentStateLabel) {
 				TaskType nextType = taskTypeRepo.findById(taskType.getId()-1).get();
