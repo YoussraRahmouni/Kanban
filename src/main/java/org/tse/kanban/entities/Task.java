@@ -49,6 +49,7 @@ public class Task {
 	private ChangeLog changeLog;
 	
 
+	
 	public Task(String title, int nbHoursForeCast, int nbHoursReal, Date created, TaskStatus taskStatus,
 			TaskType taskType, ChangeLog changeLog) {
 		super();

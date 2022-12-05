@@ -12,29 +12,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  * @author Rahmouni Youssra
  *
  */
 @Entity
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@RequiredArgsConstructor
 public class Developer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@NonNull
+	//@NonNull
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -49,7 +39,6 @@ public class Developer {
 	}
 
 	public Developer(String firstName) {
-
 		this.firstName = firstName;
 	}
 

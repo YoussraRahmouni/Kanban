@@ -29,8 +29,8 @@ public class DeveloperService {
 		return developerRepo.findById(id).get();
 	}
 	
-	public void createDeveloper(Developer developer) {
-		developerRepo.save(developer);
+	public Developer createDeveloper(Developer developer) {
+		return developerRepo.save(developer);
 	}
 	
 	public void updateDeveloperFirstName(long id, String firstName) {

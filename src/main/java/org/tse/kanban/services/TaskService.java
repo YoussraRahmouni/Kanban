@@ -27,8 +27,8 @@ public class TaskService {
 	
 	private List<TaskType> tasksTypes;
 	
-	public void createTask(Task task) {
-		taskRepo.save(task);
+	public Task createTask(Task task) {
+		return taskRepo.save(task);
 	}
 	
 	public List<Task> findAllTasks(){
